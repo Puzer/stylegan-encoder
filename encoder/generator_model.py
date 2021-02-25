@@ -3,6 +3,7 @@ import numpy as np
 import dnnlib.tflib as tflib
 from functools import partial
 
+tf.device('/job:localhost/replica:0/task:0/device:XLA_GPU:0')
 
 def create_stub(name, batch_size):
     return tf.constant(0, dtype='float32', shape=(batch_size, 0))
